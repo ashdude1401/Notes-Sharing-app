@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # notes_sharing_app
 
 A new Flutter project.
@@ -14,3 +15,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# Notes-sharing-app
+This is a notes sharing app to easily share notes
+>>>>>>> 226127b390920824aec003c99a03345043cc04d6
