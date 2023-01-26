@@ -8,32 +8,45 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF9F8FD),
-      appBar: AppBar(
-        leading: IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.menu,
-              // size: 50,
-            )),
-        leadingWidth: 70,
-        actions: [
-          IconButton(
-              onPressed: (() {}),
-              icon: const Icon(
-                Icons.circle_notifications,
-                size: 30,
-              ))
-        ],
-        title: Text(
-          "Notes Library",
-          style: TextStyle(
-              color: Theme.of(context).secondaryHeaderColor,
-              fontFamily: "Roboto",
-              fontWeight: FontWeight.bold),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(140.0),
+        child: Container(
+          alignment: Alignment.bottomCenter,
+          height: 120,
+          child: Column(
+            children: [
+              Container(
+                height: 20,
+                color: Theme.of(context).primaryColor,
+              ),
+              AppBar(
+                leading: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.menu,
+                    )),
+                actions: [
+                  IconButton(
+                      onPressed: (() {}),
+                      icon: const Icon(
+                        Icons.circle_notifications,
+                        size: 30,
+                      ))
+                ],
+                title: Text(
+                  "Notes Library",
+                  style: TextStyle(
+                      color: Theme.of(context).secondaryHeaderColor,
+                      fontFamily: "Roboto",
+                      fontWeight: FontWeight.bold),
+                ),
+                backgroundColor: Theme.of(context).primaryColor,
+              ),
+            ],
+          ),
         ),
-        backgroundColor: Theme.of(context).primaryColor,
       ),
-      body:const Body(),
+      body: const Body(),
     );
   }
 }
