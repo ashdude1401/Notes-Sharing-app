@@ -1,11 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
+import './college_or_school.dart';
+
+
+
+
 
 class Notes {
   final String id;
   final String title;
   final String description;
-  final String collegeOrSchool;
+  final CollegeOrSchool collegeOrSchool;
   final String board;
   final String uploader;
   final String location;
@@ -31,33 +36,49 @@ class Notes {
 }
 
 List<Notes> dummyNotes = [
-Notes(
-id: '1',
-title: 'Linear Algebra',
-description: 'Linear algebra notes for beginners',
-collegeOrSchool: 'MIT',
-board: 'MIT',
-uploader: 'John Doe',
-location: 'Boston, MA',
-uploadDate: DateTime.now(),
-price: 0.0
-),
-Notes(
-id: '2',
-title: 'Calculus 1',
-description: 'Calculus 1 notes for college students',
-collegeOrSchool: 'Harvard',
-board: 'Harvard',
-uploader: 'Jane Smith',
-location: 'Cambridge, MA',
-uploadDate: DateTime.now(),
-price: 5.0
-),
+ Notes(
+    id: '1',
+    title: 'Linear Algebra',
+    description: 'Linear algebra notes for beginners',
+    collegeOrSchool: CollegeOrSchool(
+        id: '1',
+        name: 'MIT',
+        imageUrl:
+            'https://www.mit.edu/style/img/logos/mit-logo.png',
+        numberOfNotes: 100,
+        courses: ['Math', 'Physics', 'Engineering']),
+    board: 'MIT',
+    uploader: 'John Doe',
+    location: 'Boston, MA',
+    uploadDate: DateTime.now(),
+    price: 0.0),
+  Notes(
+    id: '2',
+    title: 'Calculus 1',
+    description: 'Calculus 1 notes for college students',
+    collegeOrSchool: CollegeOrSchool(
+        id: '2',
+        name: 'Harvard',
+        imageUrl:
+            'https://www.harvard.edu/sites/default/files/content/harvard_logo_black_1.png',
+        numberOfNotes: 150,
+        courses: ['Math', 'Physics', 'Business']),
+    board: 'Harvard',
+    uploader: 'Jane Smith',
+    location: 'Cambridge, MA',
+    uploadDate: DateTime.now(),
+    price: 5.0),
 Notes(
 id: '3',
 title: 'Computer Science',
 description: 'Notes for computer science 101 class',
-collegeOrSchool: 'Stanford',
+collegeOrSchool:   CollegeOrSchool(
+    id: '3',
+    name: 'Stanford',
+    imageUrl: 'https://www.stanford.edu/sites/default/files/styles/square/public/images/logo-stanford-white.png',
+    numberOfNotes: 15,
+    courses: ['Computer Science', 'Electrical Engineering', 'Biology'],
+  ),
 board: 'Stanford',
 uploader: 'Bob Johnson',
 location: 'Stanford, CA',
@@ -68,7 +89,13 @@ Notes(
 id: '4',
 title: 'Chemistry',
 description: 'Chemistry notes for high school students',
-collegeOrSchool: 'High School',
+collegeOrSchool:   CollegeOrSchool(
+    id: '4',
+    name: 'High School',
+    imageUrl: 'https://www.example.com/high-school-logo.jpg',
+    numberOfNotes: 5,
+    courses: ['Math', 'Science', 'English'],
+  ),
 board: 'High School',
 uploader: 'Amy Lee',
 location: 'Los Angeles, CA',

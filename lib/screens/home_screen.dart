@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:notes_sharing_app/widgets/body.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -7,7 +8,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF9F8FD),
+      backgroundColor: const Color.fromARGB(255, 245, 245, 254),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(140.0),
         child: Container(
@@ -46,7 +47,59 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: const Body(),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          return SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                  maxWidth: MediaQuery.of(context).size.width,
+                  maxHeight: MediaQuery.of(context).size.height),
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "No! need to worry about Notes",
+                          style: TextStyle(
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25,
+                            color: Color.fromARGB(255, 3, 0, 28),
+                          ),
+                        ),
+                        SizedBox(
+                            height: 400,
+                            width: double.infinity,
+                            child: Stack(children: [
+                              SvgPicture.asset('assets/Images/topper.svg'),
+                              const Positioned(
+                                top: 110,
+                                left: 10,
+                                child: Text("Get class topper notes"),
+                              ),
+                            ]))
+                      ],
+                    ),
+                    Text(
+                      "Topic Wise Notes",
+                      style: TextStyle(color: Theme.of(context).primaryColor),
+                    ),
+                    const Expanded(child: Body()),
+                    Text(
+                      "College Wise Notes",
+                      style: TextStyle(color: Theme.of(context).primaryColor),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
 }

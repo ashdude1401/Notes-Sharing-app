@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 final ThemeData appTheme = ThemeData(
-  primaryColor:const  Color.fromARGB(255, 39, 21, 177),
-  backgroundColor: const Color(0xffFFE5F1),
-  cardColor: const Color(0xffFFF8E1),
+  fontFamily: 'Roboto',
+  primaryColor: const Color.fromARGB(255, 39, 21, 177),
+  iconTheme: const IconThemeData(
+    color: Color.fromARGB(255, 3, 0, 28),
+  ),
+  cardColor: Color.fromARGB(255, 242, 242, 242),
   textTheme: const TextTheme(
     headline1: TextStyle(
         fontSize: 36.0, fontWeight: FontWeight.bold, fontFamily: "Roboto"),
