@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 
-class CollegewiseNotesCard extends StatelessWidget {
+class TopicwiseNotesCard extends StatelessWidget {
   final String id;
   final String title;
   final String imageUrl;
   final double price;
-  final String collegOrSchool;
-  const CollegewiseNotesCard(
+  const TopicwiseNotesCard(
       {super.key,
       required this.title,
       required this.id,
       required this.imageUrl,
-      required this.price,
-      required this.collegOrSchool});
+      required this.price});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +20,7 @@ class CollegewiseNotesCard extends StatelessWidget {
         header: Container(
             alignment: Alignment.center,
             width: double.infinity,
-            height: 60,
+            height: 120,
             decoration: const BoxDecoration(
                 color: Color.fromARGB(187, 110, 0, 150),
                 borderRadius: BorderRadius.only(
@@ -38,7 +36,6 @@ class CollegewiseNotesCard extends StatelessWidget {
         footer: Container(
           alignment: Alignment.center,
           width: double.infinity,
-          height: 60,
           decoration: const BoxDecoration(
               color: Color.fromARGB(187, 110, 0, 150),
               borderRadius: BorderRadius.only(

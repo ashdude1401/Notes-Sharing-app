@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:notes_sharing_app/Provider/college_or_school.dart';
 
-class TopicwiseNotesCard extends StatelessWidget {
+class CollegewiseNotesCard extends StatelessWidget {
   final String id;
   final String title;
   final String imageUrl;
   final double price;
-  const TopicwiseNotesCard(
+  final CollegeOrSchool collegOrSchool;
+  const CollegewiseNotesCard(
       {super.key,
       required this.title,
       required this.id,
       required this.imageUrl,
-      required this.price});
+      required this.price,
+      required this.collegOrSchool});
 
   @override
   Widget build(BuildContext context) {

@@ -6,13 +6,13 @@ final ThemeData appTheme = ThemeData(
   iconTheme: const IconThemeData(
     color: Color.fromARGB(255, 3, 0, 28),
   ),
-  cardColor: Color.fromARGB(255, 242, 242, 242),
+  cardColor: const Color.fromARGB(255, 242, 242, 242),
   textTheme: const TextTheme(
-    headline1: TextStyle(
+    displayLarge: TextStyle(
         fontSize: 36.0, fontWeight: FontWeight.bold, fontFamily: "Roboto"),
-    subtitle1: TextStyle(
+    titleMedium: TextStyle(
         fontSize: 24.0, fontStyle: FontStyle.italic, fontFamily: "OpenSans"),
-    bodyText1: TextStyle(fontSize: 14.0, fontFamily: "Roboto"),
+    bodyLarge: TextStyle(fontSize: 14.0, fontFamily: "Roboto"),
   ),
   colorScheme:
       ColorScheme.fromSwatch().copyWith(secondary: const Color(0xffC0DEFF)),
