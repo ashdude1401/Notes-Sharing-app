@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:notes_sharing_app/Provider/notes.dart';
-import 'package:notes_sharing_app/screens/home_screen.dart';
-import 'package:notes_sharing_app/src/utils/Theme/theme.dart';
+import 'package:get/get.dart';
+import './Provider/notes.dart';
+import './screens/home_screen.dart';
+import '../src/features/authentication/screens/splash_screen1/splash_screen.dart';
+import './src/utils/Theme/theme.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -18,13 +20,13 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: ((context) => NotesList())),
       ],
-      child: MaterialApp(
+      child: GetMaterialApp(
         title: 'Flutter Demo',
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
         themeMode: ThemeMode.system,
         debugShowCheckedModeBanner: false,
-        home: const HomeScreen(),
+        home:  SplashScreen(),
       ),
     );
   }
