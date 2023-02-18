@@ -32,10 +32,6 @@ class SplashScreen extends StatelessWidget {
                 bottom: splashScreenController.animate.value ? 2 : 0,
                 left: splashScreenController.animate.value? 2 : 0,
                 right: splashScreenController.animate.value ? 2 : 0,
-                //        top: size.height * 0.15 ,
-                // bottom:  2 ,
-                // left:  2 ,
-                // right:  2 ,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
