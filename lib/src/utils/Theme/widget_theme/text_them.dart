@@ -39,16 +39,39 @@ class WidgetTextTheme {
 
   static TextTheme darkTextTheme = TextTheme(
     displayMedium: GoogleFonts.montserrat(
-      color: Colors.white70,
+      color:const  Color.fromARGB(208, 255, 255, 255),
     ),
     titleSmall: GoogleFonts.poppins(
-      color: Colors.white60,
+      color:const  Color.fromARGB(199, 255, 255, 255),
       fontSize: 24,
     ),
-    titleLarge: GoogleFonts.montserrat(
-      color: tDarkColor,
-      fontSize: 58,
-      fontWeight: FontWeight.bold,
-    ),
+    displaySmall: GoogleFonts.montserrat(
+          color: const Color.fromARGB(188, 255, 255, 255),
+          fontSize: 35,
+          fontWeight: FontWeight.bold),
+      headlineMedium: GoogleFonts.archivo(
+        color: tPrimaryColor,
+        fontStyle: FontStyle.normal,
+        fontWeight: FontWeight.w600,
+        fontSize: 28,
+      ),
+      headlineSmall: GoogleFonts.openSans(
+        color: const Color.fromARGB(247, 255, 255, 255),
+        fontStyle: FontStyle.normal,
+        fontWeight: FontWeight.w900,
+        fontSize: 24,
+      ),
+      titleLarge: GoogleFonts.montserrat(
+        color: tPrimaryColor,
+        fontSize: 58,
+        fontWeight: FontWeight.bold,
+      ),
+      bodyLarge: GoogleFonts.roboto(
+        color:const  Color.fromARGB(219, 255, 255, 255),
+        fontWeight: FontWeight.bold,
+        fontSize: 18,
+      ),
+      bodySmall: GoogleFonts.openSans(
+          color:const Color.fromARGB(236, 255, 255, 255), fontSize: 16, fontWeight: FontWeight.bold)
   );
 }

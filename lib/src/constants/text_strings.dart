@@ -1,5 +1,10 @@
 //All the strings
 
+//-------Generic-type-------
+
+const String loginText = "login";
+const String signupText = "signup";
+
 //landing Page Text
 const String landingPageText1 =
     "Download the best notes from the best students";
@@ -29,3 +34,8 @@ const String onBoardingCounter3 = "3/3";
 //----onbording Navigation text------
 
 const String skip = "Skip";
+
+//------------Welcome Screen text-------
+
+const String welcomeScreenTitle = "Share your notes";
+const String welcomeScreenSubTitle = "Be the part of Topper's note community";

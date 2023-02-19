@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:notes_sharing_app/src/features/authentication/screens/on_boarding_screen/onboarding_screen.dart';
+import 'package:notes_sharing_app/src/features/authentication/screens/welcome/welcome_screen.dart';
 import './Provider/notes.dart';
 import './screens/home_screen.dart';
 import '../src/features/authentication/screens/splash_screen1/splash_screen.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         darkTheme: AppTheme.darkTheme,
         themeMode: ThemeMode.system,
         debugShowCheckedModeBanner: false,
-        home: const OnboardingScreen(),
+        home: const WelcomeScreen(),
       ),
     );
   }

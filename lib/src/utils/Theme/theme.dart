@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:notes_sharing_app/src/utils/Theme/widget_theme/elevated_button_theme.dart';
+import 'package:notes_sharing_app/src/utils/Theme/widget_theme/outline_buttion_them.dart';
 import 'package:notes_sharing_app/src/utils/Theme/widget_theme/text_them.dart';
 
 class AppTheme {
@@ -19,11 +21,15 @@ class AppTheme {
         900: Color(0xFF080812),
       }),
       textTheme: WidgetTextTheme.lightTextTheme,
-      elevatedButtonTheme:
-          ElevatedButtonThemeData(style: ElevatedButton.styleFrom()),);
+      elevatedButtonTheme:TElevatedButtonTheme.lightOutlineButtonThem,
+        outlinedButtonTheme: TOutlineButtonTheme.lightOutlineButtonThem
+          );
+      
 
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     textTheme: WidgetTextTheme.darkTextTheme,
+     outlinedButtonTheme: TOutlineButtonTheme.darkOutlineButtonThem,
+      elevatedButtonTheme:TElevatedButtonTheme.darkOutlineButtonThem,
   );
 }

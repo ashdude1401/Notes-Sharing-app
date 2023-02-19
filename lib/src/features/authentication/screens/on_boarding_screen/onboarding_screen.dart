@@ -16,7 +16,7 @@ class OnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
-    final obController=OnbordingController();
+    final obController = OnbordingController();
 
     return SafeArea(
       child: Scaffold(
@@ -26,17 +26,16 @@ class OnboardingScreen extends StatelessWidget {
             LiquidSwipe(
                 slideIconWidget: const Icon(Icons.arrow_back_ios),
                 enableSideReveal: true,
-                onPageChangeCallback:(activePageIndex) => obController.onChangePageCallback(activePageIndex),
+                onPageChangeCallback: (activePageIndex) =>
+                    obController.onChangePageCallback(activePageIndex),
                 liquidController: obController.controller,
-                pages:obController.pages ),
+                pages: obController.pages),
             Positioned(
               bottom: 0.0,
               child: Padding(
                 padding: const EdgeInsets.all(tDefaultSize),
                 child: OutlinedButton(
-                    onPressed:
-                      obController.animateNextPage
-                    ,
+                    onPressed: obController.animateNextPage,
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white,
                       side: const BorderSide(color: Colors.black26),
@@ -55,19 +54,21 @@ class OnboardingScreen extends StatelessWidget {
               top: size.height * 0.05,
               right: tDefaultSize,
               child: TextButton(
-                onPressed:obController.skipPage,
-                child: const Text(skip,
-                    style:
-                        TextStyle(color: Color.fromARGB(255, 119, 119, 119))),
+                onPressed: obController.skipPage,
+                child: const Text(
+                  skip,
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 119, 119, 119), fontSize: 16),
+                ),
               ),
             ),
             Obx(
-              ()=> Positioned(
+              () => Positioned(
                 bottom: size.height * 0.01,
                 child: AnimatedSmoothIndicator(
                   effect: const WormEffect(
                     activeDotColor: Color(0xff272727),
-                    dotHeight: 5,
+                    dotHeight: 12,
                   ),
                   activeIndex: obController.currentPage.value,
                   count: 3,
@@ -79,9 +80,4 @@ class OnboardingScreen extends StatelessWidget {
       ),
     );
   }
-  
-
-
- 
 }
-
