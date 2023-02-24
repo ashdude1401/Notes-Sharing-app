@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:notes_sharing_app/src/constants/image_strings.dart';
-import 'package:notes_sharing_app/src/constants/sizes.dart';
-import 'package:notes_sharing_app/src/constants/text_strings.dart';
-import 'package:notes_sharing_app/src/features/authentication/controllers/splash_screen_controller.dart';
+import 'package:notes_sharing_app/src/common_widgets/faded_animation/faded_animation_controller.dart';
+import 'package:notes_sharing_app/src/common_widgets/faded_animation/faded_animation_modal.dart';
+import '../../../../common_widgets/faded_animation/faded_animatio.dart';
+import '../../../../constants/image_strings.dart';
 
 class SplashScreen extends StatelessWidget {
-  SplashScreen({super.key});
-
-  final splashScreenController = Get.put(SplashScreenController());
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    splashScreenController.startAnimation();
+    final controller = Get.put(FadedAnimationController());
+    controller.startAnimation();
 
     const Color scBgColor = Color.fromARGB(255, 255, 255, 255);
-
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
@@ -23,36 +21,20 @@ class SplashScreen extends StatelessWidget {
       body: SafeArea(
         child: Stack(
           children: [
-            Obx(
-
-              ()=> AnimatedPositioned(
-                curve: Curves.easeIn,
-                duration: const Duration(milliseconds: 1200),
-                top: splashScreenController.animate.value ? size.height * 0.15 : 0,
-                bottom: splashScreenController.animate.value ? 2 : 0,
-                left: splashScreenController.animate.value? 2 : 0,
-                right: splashScreenController.animate.value ? 2 : 0,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Image(
-                      image: AssetImage(tSplashImage),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: tDefaultSize),
-                      child: Obx(
-                        ()=> AnimatedOpacity(
-                          duration: const Duration(milliseconds: 1000),
-                          opacity: splashScreenController.animate.value ? 1 : 0,
-                          child: Text(landingPageText1,
-                              style: Theme.of(context).textTheme.headlineMedium),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+            TFadedAnimation(
+              durationInMs: 1600,
+              animationPosition: TAnimationPosition(
+                leftBefore: size.width * 0.3,
+                leftAfter: size.width * 0.3,
+                topAfter: size.height * 0.4,
+                topBefore: size.height * 0.3,
               ),
-            ),
+              child: Image(
+                image: const AssetImage(tSplashImage),
+                height: size.height * 0.2,
+                alignment: Alignment.center,
+              ),
+            )
           ],
         ),
       ),

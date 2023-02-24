@@ -38,10 +38,11 @@ dependencies:
   flutter_svg: ^1.1.6
   provider: ^6.0.5
   google_fonts: ^4.0.3
-  flutter_native_splash: ^2.2.17
+  # flutter_native_splash: ^2.2.17
   get: ^4.6.5
   liquid_swipe: ^3.0.0
   smooth_page_indicator: ^1.0.1
+  flutter_otp_text_field: ^1.1.1
 
 dev_dependencies:
   flutter_test:
@@ -54,32 +55,32 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
 
-# flutter_native_splash: 
+# flutter_native_splash:
 #   color:"#f76f1"
 #   color_dark:"#272727"
 #   image:assets/Images/logo.png
 #   image_dark:assets/Images/logo.png
 
-#   android_12: 
+#   android_12:
 #     icon_background_color:"#f76f1"
 #     icon_background_color_dark:"#272727"
 #     image:assets/Images/logo.png
 #     image_dark:assets/Images/logo.png
-flutter_native_splash:
-  color: "#f7f6f1"
-  image: assets/Images/logo.png
-  branding: assets/Images/loading1.png
-  color_dark: "#272727"
-  image_dark: assets/Images/logo.png
-  branding_dark: assets/Images/loading1.png
+# flutter_native_splash:
+#   color: "#f7f6f1"
+#   image: assets/Images/logo.png
+#   branding: assets/Images/loading1.png
+#   color_dark: "#272727"
+#   image_dark: assets/Images/logo.png
+#   branding_dark: assets/Images/loading1.png
 
-  android_12:
-    image: assets/Images/logo.png
-    icon_background_color: "#f7f6f1"
-    image_dark: assets/Images/logo.png
-    icon_background_color_dark: "#272727"
+#   android_12:
+#     image: assets/Images/logo.png
+#     icon_background_color: "#f7f6f1"
+#     image_dark: assets/Images/logo.png
+#     icon_background_color_dark: "#272727"
 
-  web: false
+#   web: false
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

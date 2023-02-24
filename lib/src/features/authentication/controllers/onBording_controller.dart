@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:liquid_swipe/PageHelpers/LiquidController.dart';
+import 'package:notes_sharing_app/src/features/authentication/screens/welcome/welcome_screen.dart';
 
 import '../../../constants/colors.dart';
 import '../../../constants/image_strings.dart';
@@ -39,12 +39,21 @@ class OnbordingController extends GetxController {
   }
 
   void skipPage() {
-    controller.jumpToPage(page: 2);
+    if (controller.currentPage == 2) {
+      Get.offAll(const WelcomeScreen());
+    }else{
+          controller.jumpToPage(page: 2);
+    }
+
   }
 
   animateNextPage() {
-    int nextPage = controller.currentPage + 1;
-    controller.animateToPage(page: nextPage);
+    if (controller.currentPage == 2) {
+      Get.offAll(const WelcomeScreen());
+    } else {
+      int nextPage = controller.currentPage + 1;
+      controller.animateToPage(page: nextPage);
+    }
   }
 }
 
@@ -74,28 +83,34 @@ class OnBoardingWidget extends StatelessWidget {
           image: AssetImage(img),
           height: size.height * 0.3,
         ),
-        SizedBox(height: size.height * 0.05),
+        SizedBox(height: size.height * 0.04),
         Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               title,
-              style: Theme.of(context).textTheme.headlineSmall,
+              style: Theme.of(context).textTheme.headlineMedium,
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: size.height * 0.03,
+              height: size.height * 0.02,
             ),
             Text(subtitle,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyLarge),
+                style: Theme.of(context)
+                    .textTheme
+                    .titleSmall
+                    ?.copyWith(color: Colors.black87)),
             SizedBox(
-              height: size.height * 0.03,
+              height: size.height * 0.02,
             ),
             Text(
               counter,
-              style: Theme.of(context).textTheme.bodySmall,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  color: tPrimaryColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16),
             ),
           ],
         ),

@@ -3,10 +3,9 @@ import 'package:get/get.dart';
 
 import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:notes_sharing_app/src/constants/colors.dart';
-import 'package:notes_sharing_app/src/constants/image_strings.dart';
 import 'package:notes_sharing_app/src/constants/sizes.dart';
 import 'package:notes_sharing_app/src/constants/text_strings.dart';
-import 'package:notes_sharing_app/src/features/authentication/controllers/onBording_controller.dart';
+import 'package:notes_sharing_app/src/features/authentication/controllers/onbording_controller.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -17,7 +16,6 @@ class OnboardingScreen extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     final obController = OnbordingController();
-
     return SafeArea(
       child: Scaffold(
         body: Stack(
@@ -38,14 +36,14 @@ class OnboardingScreen extends StatelessWidget {
                     onPressed: obController.animateNextPage,
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white,
-                      side: const BorderSide(color: Colors.black26),
+                      side: const BorderSide(color: tPrimaryColor),
                       shape: const CircleBorder(),
                       padding: const EdgeInsets.all(15),
                     ),
                     child: Container(
                       padding: const EdgeInsets.all(15),
                       decoration: const BoxDecoration(
-                          color: tDarkColor, shape: BoxShape.circle),
+                          color: tPrimaryColor, shape: BoxShape.circle),
                       child: const Icon(Icons.arrow_forward_ios),
                     )),
               ),
@@ -55,10 +53,10 @@ class OnboardingScreen extends StatelessWidget {
               right: tDefaultSize,
               child: TextButton(
                 onPressed: obController.skipPage,
-                child: const Text(
+                child: Text(
                   skip,
                   style: TextStyle(
-                      color: Color.fromARGB(255, 119, 119, 119), fontSize: 16),
+                      color: Theme.of(context).disabledColor, fontSize: 16),
                 ),
               ),
             ),
@@ -67,7 +65,7 @@ class OnboardingScreen extends StatelessWidget {
                 bottom: size.height * 0.01,
                 child: AnimatedSmoothIndicator(
                   effect: const WormEffect(
-                    activeDotColor: Color(0xff272727),
+                    activeDotColor: tPrimaryColor,
                     dotHeight: 12,
                   ),
                   activeIndex: obController.currentPage.value,
