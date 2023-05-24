@@ -24,12 +24,9 @@ class FormHeaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: tCrossAxissAligment == null
-          ? CrossAxisAlignment.start
-          : tCrossAxissAligment!,
-      mainAxisAlignment: tMainAxisAlignment == null
-          ? MainAxisAlignment.start
-          : tMainAxisAlignment!,
+      crossAxisAlignment: tCrossAxissAligment??CrossAxisAlignment.start,
+      mainAxisAlignment: tMainAxisAlignment ??
+           MainAxisAlignment.start,
       children: [
         Image(
           image: AssetImage(hdrImg),

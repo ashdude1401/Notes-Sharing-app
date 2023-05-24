@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_sharing_app/src/common_widgets/Form/form_header.dart';
+import 'package:notes_sharing_app/src/common_widgets/SkipNow/skip_now.dart';
 import 'package:notes_sharing_app/src/constants/image_strings.dart';
 import 'package:notes_sharing_app/src/constants/sizes.dart';
 import 'package:notes_sharing_app/src/constants/text_strings.dart';
@@ -18,26 +19,32 @@ class SignUpScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: Container(
             padding: const EdgeInsets.all(tDefaultSize),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                FormHeaderWidget(
+            child: Stack(children: [
+              Positioned(
+                right: tDefaultSize - 25,
+                top: tDefaultSize - 20,
+                child: SkipNowWidget(
                   size: size,
-                  hdrImg: welcomeScreenImg,
-                  title: tSignUpTitle,
-                  subTitle: tSignUpSubTitle,
                 ),
-                const SignUpFormWidget(),
-                
-                const SignUpFooterWidget(),
-
-              ],
-            ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  FormHeaderWidget(
+                    size: size,
+                    hdrImg: welcomeScreenImg,
+                    title: tSignUpTitle,
+                    subTitle: tSignUpSubTitle,
+                  ),
+                  const SignUpFormWidget(),
+                  const SignUpFooterWidget(),
+                ],
+              ),
+            ]),
           ),
         ),
       ),
     );
   }
 }
-

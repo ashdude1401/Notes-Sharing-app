@@ -1,10 +1,16 @@
 //All the strings
 
+//------App name
+
+const String appName = "Notest";
+
 //-------Generic-type-------
 
 const String loginText = "login";
 const String signupText = "signup";
 const String tNext = "Next";
+const String tSkipNow = "Skip";
+const String tNotes = "Notes";
 
 //----------login-signup text---------
 const String tEmail = "E-mail";
@@ -82,3 +88,36 @@ const String tCode = "CO\nDE";
 const String tVerification = "Verification";
 
 const String tEnterVerifcation = "Enter the verfication code sent at";
+
+//----------------------Dashboard --------
+
+const String tDashboardTitle = "Hey, there!";
+const String tDashboardSubtilte = "Explore Topper's Notes";
+const String tSearch = "Search...";
+const String tCategories = "Categories";
+
+const String tStream = "Stream";
+const String tHotTopics = "Hot Topics";
+const String tTopic = "Topic";
+
+const String tCarouselTitle1 = "Get high quality ";
+const String tCarouselSubtitle1 = "Topper's Notes";
+
+const String tCarouselTitle2 = "Get  notes for";
+const String tCarouselSubtitle2 = "21 Rupees";
+
+const String tCarouselTitle3 = "A transaction  from";
+const String tCarouselSubtitle3 = "Acing semes";
+
+//---------Upload Screen ------
+
+const String tUploadScreenTitle =
+    "Upload your document and get  money in return as per downloads.";
+const String tUpload = "Upload";
+const String tLearnMore = "Learn more";
+
+//--------------terms and polices
+
+const String tTermsAndPolices = "Terms and policies";
+const String tTermsAndPolicesDescption =
+    "Upload your notes and you will get money as per number of downloads and you would get 75% of the money that a user pays. You will get 37 rupees per download. You must upload your notes on pdf format and in future if you get rated high enough you will be paid more. That depends on the quality of your note. So upload the best notes possible.";

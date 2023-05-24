@@ -43,6 +43,17 @@ dependencies:
   liquid_swipe: ^3.0.0
   smooth_page_indicator: ^1.0.1
   flutter_otp_text_field: ^1.1.1
+  carousel_slider: ^4.2.1
+  firebase_core: ^2.7.0
+  firebase_auth: ^4.2.9
+  file_picker: ^5.2.6
+  pdfx: ^2.3.0
+  firebase_storage: ^11.0.16
+  open_filex: ^4.3.2
+  cloud_firestore: ^4.4.5
+  internet_file: ^1.2.0
+  syncfusion_flutter_pdfviewer: ^20.4.54
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:

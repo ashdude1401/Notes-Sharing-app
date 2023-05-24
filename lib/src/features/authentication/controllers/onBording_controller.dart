@@ -41,10 +41,9 @@ class OnbordingController extends GetxController {
   void skipPage() {
     if (controller.currentPage == 2) {
       Get.offAll(const WelcomeScreen());
-    }else{
-          controller.jumpToPage(page: 2);
+    } else {
+      controller.jumpToPage(page: 2);
     }
-
   }
 
   animateNextPage() {

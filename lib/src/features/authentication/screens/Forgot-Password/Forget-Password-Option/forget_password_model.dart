@@ -22,8 +22,14 @@ class ForgetPasswordModel {
                   children: [
                     Text(tForgotPasswordTitle,
                         style: Theme.of(context).textTheme.headlineMedium),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.02,
+                    ),
                     Text(tForgotPasswordSubTitle,
-                        style: Theme.of(context).textTheme.titleSmall),
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleSmall
+                            ?.apply(fontSizeDelta: -1)),
                     const SizedBox(
                       height: tFormHeight,
                     ),

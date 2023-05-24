@@ -1,9 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:notes_sharing_app/src/features/authentication/screens/splash_screen1/splash_screen.dart';
+import 'package:notes_sharing_app/firebase_options.dart';
+import 'package:notes_sharing_app/src/constants/colors.dart';
+import 'package:notes_sharing_app/src/constants/image_strings.dart';
+import 'package:notes_sharing_app/src/repository/authentication-repository/authentication_repository.dart';
+
 import './src/utils/Theme/theme.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
+      .then((value) => Get.put(AuthenticationRepostory()));
   runApp(const MyApp());
 }
 
@@ -21,7 +30,20 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       defaultTransition: Transition.leftToRightWithFade,
       transitionDuration: const Duration(microseconds: 5000),
-      home: const SplashScreen(),
+      home: Scaffold(
+          body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Expanded(
+                child: CircleAvatar(
+                    radius: 48,
+                    backgroundColor: tOptionalColor,
+                    child: Image.asset(tSplashImage))),
+            const Center(child: CircularProgressIndicator()),
+          ],
+        ),
+      )),
     );
   }
 }
